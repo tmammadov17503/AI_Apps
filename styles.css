@@ -436,9 +436,9 @@ input {
 
 .controls {
   position: sticky;
-  top: 0.9rem;
-  z-index: 5;
-  margin-top: 1.5rem;
+  top: 0.7rem;
+  z-index: 20;
+  margin-bottom: 1.5rem;
   padding: 1.2rem;
   border-radius: var(--radius-xl);
 }
@@ -946,7 +946,7 @@ input {
   }
 
   .controls {
-    position: static;
+    top: 0.55rem;
   }
 }
 

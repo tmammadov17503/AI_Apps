@@ -35,6 +35,25 @@
           <a class="top-link" href="#toolSections">Open dashboard</a>
         </nav>
 
+        <section class="controls" id="searchDock">
+          <div class="search-shell">
+            <label class="search-label" for="searchInput">Search your stack</label>
+            <div class="search-input-shell">
+              <input
+                id="searchInput"
+                type="search"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="Search by name, category, or tag..."
+              />
+            </div>
+          </div>
+
+          <div class="filter-row" id="filterRow" aria-label="Category filters"></div>
+
+          <p class="result-summary" id="resultSummary" aria-live="polite"></p>
+        </section>
+
         <div class="hero-grid" id="top">
           <section class="hero-copy">
             <p class="eyebrow">One place for everything you open every day</p>
@@ -104,25 +123,6 @@
       </header>
 
       <main>
-        <section class="controls">
-          <div class="search-shell">
-            <label class="search-label" for="searchInput">Search your stack</label>
-            <div class="search-input-shell">
-              <input
-                id="searchInput"
-                type="search"
-                autocomplete="off"
-                spellcheck="false"
-                placeholder="Search by name, category, or tag..."
-              />
-            </div>
-          </div>
-
-          <div class="filter-row" id="filterRow" aria-label="Category filters"></div>
-
-          <p class="result-summary" id="resultSummary" aria-live="polite"></p>
-        </section>
-
         <section class="lane-overview" id="laneOverview" aria-label="Category overview"></section>
 
         <section class="tool-sections" id="toolSections" aria-label="Tool categories"></section>

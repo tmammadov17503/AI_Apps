@@ -329,6 +329,16 @@ const apps = [
     tags: ["sports", "football", "live"],
   },
   {
+    name: "Setanta Sports",
+    url: "https://app.setantasports.com/home",
+    category: "media-streaming",
+    role: "Sports platform",
+    state: "Live sports",
+    description: "Streaming home for live sports, replays, and match coverage inside the Setanta platform.",
+    detail: "This fits naturally beside the other sports and media links so match-day access stays in one lane.",
+    tags: ["sports", "streaming", "matches"],
+  },
+  {
     name: "M4UHD",
     url: "https://m4uhd.com.co",
     category: "media-streaming",

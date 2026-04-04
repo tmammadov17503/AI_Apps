@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orbit Deck | Daily Apps Hub</title>
+    <meta
+      name="description"
+      content="A motion-rich daily dashboard for AI tools, build consoles, crypto signals, media portals, utilities, and personal apps."
+    />
+    <meta name="theme-color" content="#07111d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Syne:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="cursor-label" id="cursorLabel" aria-hidden="true"></div>
+
+    <div class="page-shell">
+      <header class="hero">
+        <nav class="topbar">
+          <a class="brand" href="#top" aria-label="Orbit Deck home">
+            <img src="assets/logo-mark.svg" alt="" width="44" height="44" />
+            <span>
+              <strong>Orbit Deck</strong>
+              <small>tmammadov daily stack</small>
+            </span>
+          </a>
+
+          <a class="top-link" href="#toolSections">Open dashboard</a>
+        </nav>
+
+        <div class="hero-grid" id="top">
+          <section class="hero-copy">
+            <p class="eyebrow">One place for everything you open every day</p>
+            <h1>All your AI apps, crypto tools, streaming links, and useful sites in one polished launchpad.</h1>
+            <p class="hero-text">
+              Search fast, filter by category, hover to preview what each app is for, and jump out in one click. Built to feel more like a personal control room than a bookmark list.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#toolSections">Browse tools</a>
+              <button class="button button-secondary" id="randomLaunch" type="button">Random launch</button>
+            </div>
+
+            <div class="hero-chips" aria-label="Topic overview">
+              <span>AI</span>
+              <span>Creator</span>
+              <span>Build</span>
+              <span>Markets</span>
+              <span>Media</span>
+              <span>Utility</span>
+            </div>
+
+            <div class="hero-stats">
+              <article>
+                <strong id="heroTotal">0</strong>
+                <span>saved tools</span>
+              </article>
+              <article>
+                <strong id="heroCategories">0</strong>
+                <span>smart lanes</span>
+              </article>
+              <article>
+                <strong id="heroPersonal">0</strong>
+                <span>your own apps</span>
+              </article>
+            </div>
+          </section>
+
+          <section class="hero-visual" aria-hidden="true">
+            <div class="orb orb-one"></div>
+            <div class="orb orb-two"></div>
+            <div class="orb orb-three"></div>
+
+            <div class="visual-deck">
+              <article class="visual-card visual-card-main">
+                <p>Control room</p>
+                <h2>Fast switchboard for daily work and useful side links</h2>
+                <div class="visual-lines">
+                  <span>Search + filter</span>
+                  <span>3D hover</span>
+                  <span>Category lanes</span>
+                </div>
+              </article>
+
+              <article class="visual-card visual-card-side">
+                <p>Core lanes</p>
+                <strong>AI and creator stack</strong>
+              </article>
+
+              <article class="visual-card visual-card-side">
+                <p>Signals</p>
+                <strong>Crypto, travel, media</strong>
+              </article>
+            </div>
+          </section>
+        </div>
+      </header>
+
+      <main>
+        <section class="controls">
+          <div class="search-shell">
+            <label class="search-label" for="searchInput">Search your stack</label>
+            <div class="search-input-shell">
+              <input
+                id="searchInput"
+                type="search"
+                autocomplete="off"
+                spellcheck="false"
+                placeholder="Search by name, category, or tag..."
+              />
+            </div>
+          </div>
+
+          <div class="filter-row" id="filterRow" aria-label="Category filters"></div>
+
+          <p class="result-summary" id="resultSummary" aria-live="polite"></p>
+        </section>
+
+        <section class="lane-overview" id="laneOverview" aria-label="Category overview"></section>
+
+        <section class="tool-sections" id="toolSections" aria-label="Tool categories"></section>
+
+        <section class="empty-state hidden" id="emptyState">
+          <p>No tools matched that search. Try a broader word or switch back to All lanes.</p>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>Built as a zero-build static site for GitHub Pages, so you can edit and publish it fast.</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -869,6 +869,21 @@ input {
   line-height: 1.7;
 }
 
+.site-version {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.8rem;
+  min-height: 36px;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+  color: #dce8f6;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 @keyframes float {
   0%,
   100% {

@@ -636,6 +636,7 @@ input {
 
 .tool-section {
   position: relative;
+  scroll-margin-top: 9rem;
   padding: 1.35rem;
   border-radius: var(--radius-xl);
   border: 1px solid rgba(255, 255, 255, 0.08);

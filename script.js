@@ -56,9 +56,9 @@ const categories = [
     order: 7,
   },
   {
-    id: "learning-career",
-    label: "Learning & Career",
-    blurb: "Interview prep, learning portals, courses, and job simulation tools.",
+    id: "job-searches",
+    label: "Job Searches",
+    blurb: "Job hunting, interview prep, work platforms, and career-focused tools.",
     accent: "255, 168, 125",
     order: 8,
   },
@@ -211,6 +211,16 @@ const apps = [
     description: "AI simulation workspace for running what-if scenarios and future-style prediction flows.",
     detail: "Best for exploring scenarios and generated reports instead of plain chat answers.",
     tags: ["simulation", "forecast", "analysis"],
+  },
+  {
+    name: "Google Jules",
+    url: "https://jules.google.com/session",
+    category: "ai-agents",
+    role: "Coding agent",
+    state: "Google Dev",
+    description: "Google's AI coding agent workspace for repo-aware development tasks, fixes, and implementation help.",
+    detail: "A strong fit for the AI lane because it is an agent-style coding assistant rather than a plain build console.",
+    tags: ["coding", "agent", "google"],
   },
   {
     name: "Firebase Console",
@@ -435,7 +445,7 @@ const apps = [
   {
     name: "AceInterview AI",
     url: "https://aceinterview.ai/dashboard",
-    category: "learning-career",
+    category: "job-searches",
     role: "Interview prep",
     state: "Case practice",
     description: "AI interviewer for consulting case interview practice with feedback, scoring, and voice-based sessions.",
@@ -445,7 +455,7 @@ const apps = [
   {
     name: "Anthropic Courses",
     url: "https://anthropic.skilljar.com",
-    category: "learning-career",
+    category: "ai-agents",
     role: "Learning portal",
     state: "Courses",
     description: "Anthropic's course hub for Claude, Claude Code, MCP, skills, AI fluency, and related learning paths.",
@@ -455,7 +465,7 @@ const apps = [
   {
     name: "The Forage",
     url: "https://www.theforage.com/dashboard",
-    category: "learning-career",
+    category: "job-searches",
     role: "Career prep",
     state: "Job sims",
     description: "Free job simulations and career preparation platform designed around real company task experiences.",
@@ -463,9 +473,19 @@ const apps = [
     tags: ["career", "job-simulations", "learning"],
   },
   {
+    name: "ArbiHunter",
+    url: "https://arbihunter.com/en",
+    category: "job-searches",
+    role: "Remote jobs",
+    state: "Hiring",
+    description: "Remote-first jobs and career platform with roles across digital, AI, crypto, and tech-focused work.",
+    detail: "It sits in Job Searches so your application and work-hunting tools stay together instead of being scattered.",
+    tags: ["jobs", "remote", "career"],
+  },
+  {
     name: "DataAnnotation Coding",
     url: "https://www.dataannotation.tech/coding",
-    category: "utility-life",
+    category: "job-searches",
     role: "Work platform",
     state: "Earn",
     description: "Coding and annotation work platform connected to AI training tasks.",
@@ -492,6 +512,7 @@ const searchInput = document.getElementById("searchInput");
 const emptyState = document.getElementById("emptyState");
 const randomLaunchButton = document.getElementById("randomLaunch");
 const cursorLabel = document.getElementById("cursorLabel");
+const searchDock = document.getElementById("searchDock");
 
 const orderedCategories = categories.filter((category) => category.id !== "all");
 
@@ -554,6 +575,33 @@ function getFilteredApps() {
   });
 }
 
+function scrollToVisibleTools() {
+  const firstSection = toolSections.querySelector(".tool-section");
+  if (!firstSection) {
+    return;
+  }
+
+  const dockHeight = searchDock ? searchDock.getBoundingClientRect().height : 0;
+  const viewportTop = window.scrollY + firstSection.getBoundingClientRect().top;
+  const targetTop = Math.max(viewportTop - dockHeight - 20, 0);
+
+  window.scrollTo({
+    top: targetTop,
+    behavior: "smooth",
+  });
+}
+
+function applyCategoryFilter(categoryId, options = {}) {
+  state.activeCategory = categoryId;
+  renderAppView();
+
+  if (options.scrollToTools) {
+    requestAnimationFrame(() => {
+      scrollToVisibleTools();
+    });
+  }
+}
+
 function renderFilters() {
   filterRow.innerHTML = categories
     .map((category) => {
@@ -572,8 +620,9 @@ function renderFilters() {
 
   filterRow.querySelectorAll("[data-filter]").forEach((button) => {
     button.addEventListener("click", () => {
-      state.activeCategory = button.dataset.filter;
-      renderAppView();
+      applyCategoryFilter(button.dataset.filter, {
+        scrollToTools: button.dataset.filter !== "all",
+      });
     });
   });
 }
@@ -601,9 +650,9 @@ function renderLaneOverview() {
 
   laneOverview.querySelectorAll("[data-lane-filter]").forEach((button) => {
     button.addEventListener("click", () => {
-      state.activeCategory = button.dataset.laneFilter;
-      renderAppView();
-      document.getElementById("toolSections").scrollIntoView({ behavior: "smooth", block: "start" });
+      applyCategoryFilter(button.dataset.laneFilter, {
+        scrollToTools: true,
+      });
     });
   });
 }

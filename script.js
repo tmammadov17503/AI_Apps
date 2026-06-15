@@ -414,7 +414,7 @@ const apps = [
   },
   {
     name: "M4UHD",
-    url: "https://m4uhd.com.co",
+    url: "https://streamiloo.to/watch/movie/1339713",
     category: "media-streaming",
     role: "Movie portal",
     state: "Movies",
@@ -424,7 +424,7 @@ const apps = [
   },
   {
     name: "CineHD",
-    url: "https://cinehd.cc",
+    url: "https://cinehd.app",
     category: "media-streaming",
     role: "Streaming guide",
     state: "Watch",

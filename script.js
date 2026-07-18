@@ -706,6 +706,16 @@ const apps = [
     detail: "A good Utility & Lifestyle fit because it is a practical repair reference you may want quickly outside work tools.",
     tags: ["repair", "hardware", "guides"],
   },
+  {
+    name: "Goal1",
+    url: "https://goal1.live/index.html",
+    category: "utility-life",
+    role: "Daily utility",
+    state: "General use",
+    description: "General-purpose daily site added to your personal dashboard for quick repeat access.",
+    detail: "I placed this in Utility & Lifestyle because the target page could not be inspected cleanly and it did not clearly fit AI, jobs, markets, travel, or media.",
+    tags: ["utility", "daily", "general"],
+  },
 ];
 
 const filterRow = document.getElementById("filterRow");

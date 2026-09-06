@@ -42,3 +42,59 @@ test("Baku Pulse is listed in My Apps", () => {
     category: "my-apps",
   });
 });
+
+test("new personal projects are listed in My Apps", () => {
+  expectCatalogEntry({
+    name: "GEZ Walks",
+    url: "https://tmammadov17503.github.io/gez_walks/",
+    category: "my-apps",
+  });
+  expectCatalogEntry({
+    name: "OTUR",
+    url: "https://tmammadov17503.github.io/otur/",
+    category: "my-apps",
+  });
+});
+
+test("Genspark is listed in AI & Agents", () => {
+  expectCatalogEntry({
+    name: "Genspark Super Agent",
+    url: "https://www.genspark.ai/agents?type=super_agent",
+    category: "ai-agents",
+  });
+});
+
+test("new repositories are listed in GitHub Repos", () => {
+  expectCatalogEntry({
+    name: "Kronos",
+    url: "https://github.com/shiyu-coder/Kronos",
+    category: "github-repos",
+  });
+  expectCatalogEntry({
+    name: "Vibe-Trading",
+    url: "https://github.com/HKUDS/Vibe-Trading",
+    category: "github-repos",
+  });
+});
+
+test("new study tools are listed in Learning & Courses", () => {
+  expectCatalogEntry({
+    name: "Notova",
+    url: "https://notova.ai",
+    category: "learning-courses",
+  });
+  expectCatalogEntry({
+    name: "HigherEd by Whop",
+    url: "https://edu.whop.com",
+    category: "learning-courses",
+  });
+});
+
+test("BYOjet is listed in Travel & Flights without tracking parameters", () => {
+  expectCatalogEntry({
+    name: "BYOjet",
+    url: "https://home.byojet.com/?country=au",
+    category: "travel-flights",
+  });
+  assert.doesNotMatch(catalogSource, /_gcl_|_ga=/);
+});

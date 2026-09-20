@@ -90,11 +90,46 @@ test("new study tools are listed in Learning & Courses", () => {
   });
 });
 
-test("BYOjet is listed in Travel & Flights without tracking parameters", () => {
+test("BYOjet is listed in Travel & Booking without tracking parameters", () => {
   expectCatalogEntry({
     name: "BYOjet",
     url: "https://home.byojet.com/?country=au",
     category: "travel-flights",
   });
   assert.doesNotMatch(catalogSource, /_gcl_|_ga=/);
+});
+
+test("new rail and hotel tools are listed in Travel & Booking", () => {
+  expectCatalogEntry({
+    name: "Eurostar",
+    url: "https://www.eurostar.com/uk-en",
+    category: "travel-flights",
+  });
+  expectCatalogEntry({
+    name: "Avanti Superfare",
+    url: "https://www.avantisuperfare.co.uk",
+    category: "travel-flights",
+  });
+  expectCatalogEntry({
+    name: "Priceline Hotels",
+    url: "https://www.priceline.com/?tab=hotels",
+    category: "travel-flights",
+  });
+  expectCatalogEntry({
+    name: "TrainPal",
+    url: "https://www.mytrainpal.com/",
+    category: "travel-flights",
+  });
+});
+
+test("myDigin is listed in Utility & Lifestyle", () => {
+  expectCatalogEntry({
+    name: "myDigin",
+    url: "https://mydigin.com/dashboard/",
+    category: "utility-life",
+  });
+});
+
+test("catalog excludes supplied advertising parameters", () => {
+  assert.doesNotMatch(catalogSource, /gad_source|gad_campaignid|gclid|refclickid|allianceId/);
 });

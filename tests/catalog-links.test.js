@@ -133,3 +133,24 @@ test("myDigin is listed in Utility & Lifestyle", () => {
 test("catalog excludes supplied advertising parameters", () => {
   assert.doesNotMatch(catalogSource, /gad_source|gad_campaignid|gclid|refclickid|allianceId/);
 });
+
+test("targetjobs is listed in Job Searches", () => {
+  expectCatalogEntry({
+    name: "targetjobs",
+    url: "https://targetjobs.co.uk/dashboard/",
+    category: "job-searches",
+  });
+});
+
+test("new viewing links are listed in Media & Streaming", () => {
+  expectCatalogEntry({
+    name: "Kinogo",
+    url: "https://kinogo.online",
+    category: "media-streaming",
+  });
+  expectCatalogEntry({
+    name: "Love Island on ITVX",
+    url: "https://www.itv.com/watch/love-island/2a3697/2a3697a0001",
+    category: "media-streaming",
+  });
+});

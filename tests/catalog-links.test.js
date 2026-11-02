@@ -154,3 +154,11 @@ test("new viewing links are listed in Media & Streaming", () => {
     category: "media-streaming",
   });
 });
+
+test("DeepTutor is listed in GitHub Repos", () => {
+  expectCatalogEntry({
+    name: "DeepTutor",
+    url: "https://github.com/HKUDS/DeepTutor",
+    category: "github-repos",
+  });
+});

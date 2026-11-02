@@ -477,6 +477,16 @@ const apps = [
     tags: ["github", "trading", "agents"],
   },
   {
+    name: "DeepTutor",
+    url: "https://github.com/HKUDS/DeepTutor",
+    category: "github-repos",
+    role: "AI tutoring system",
+    state: "Open source",
+    description: "Open-source personalised tutoring platform with AI agents, interactive learning, knowledge bases, deep research, and RAG workflows.",
+    detail: "It belongs in GitHub Repos as a substantial learning-agent codebase, while its tutor, education, and RAG tags keep it easy to discover.",
+    tags: ["github", "ai-tutor", "rag", "learning", "agents"],
+  },
+  {
     name: "Vizard",
     url: "https://vizard.ai/workspace",
     category: "creator-studio",

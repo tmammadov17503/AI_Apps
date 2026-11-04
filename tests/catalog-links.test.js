@@ -162,3 +162,11 @@ test("DeepTutor is listed in GitHub Repos", () => {
     category: "github-repos",
   });
 });
+
+test("LinkedIn Agent Skill is listed in GitHub Repos", () => {
+  expectCatalogEntry({
+    name: "LinkedIn Agent Skill",
+    url: "https://github.com/Jakeschincariol/linkedin-agent-skill",
+    category: "github-repos",
+  });
+});

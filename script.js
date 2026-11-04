@@ -487,6 +487,16 @@ const apps = [
     tags: ["github", "ai-tutor", "rag", "learning", "agents"],
   },
   {
+    name: "LinkedIn Agent Skill",
+    url: "https://github.com/Jakeschincariol/linkedin-agent-skill",
+    category: "github-repos",
+    role: "LinkedIn skill pack",
+    state: "Open source",
+    description: "Eleven Claude skills for drafting LinkedIn posts, comments, replies, profile improvements, weekly plans, and humanized copy.",
+    detail: "It belongs in GitHub Repos as an installable open-source skill collection. It prepares approval-ready content locally, while you remain in control of publishing.",
+    tags: ["github", "linkedin", "claude-skills", "content", "humanizer"],
+  },
+  {
     name: "Vizard",
     url: "https://vizard.ai/workspace",
     category: "creator-studio",

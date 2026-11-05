@@ -142,6 +142,19 @@ test("targetjobs is listed in Job Searches", () => {
   });
 });
 
+test("new UK graduate career sites are listed in Job Searches", () => {
+  expectCatalogEntry({
+    name: "Higherin",
+    url: "https://higherin.com",
+    category: "job-searches",
+  });
+  expectCatalogEntry({
+    name: "GRB",
+    url: "https://www.grb.uk.com",
+    category: "job-searches",
+  });
+});
+
 test("new viewing links are listed in Media & Streaming", () => {
   expectCatalogEntry({
     name: "Kinogo",

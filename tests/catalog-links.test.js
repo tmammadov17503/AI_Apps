@@ -183,3 +183,16 @@ test("LinkedIn Agent Skill is listed in GitHub Repos", () => {
     category: "github-repos",
   });
 });
+
+test("new AI workflow repositories are listed in GitHub Repos", () => {
+  expectCatalogEntry({
+    name: "Graphify",
+    url: "https://github.com/Graphify-Labs/graphify",
+    category: "github-repos",
+  });
+  expectCatalogEntry({
+    name: "ComfyUI",
+    url: "https://github.com/Comfy-Org/ComfyUI",
+    category: "github-repos",
+  });
+});
